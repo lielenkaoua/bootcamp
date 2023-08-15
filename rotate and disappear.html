@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--Initiate html framework and indicate language of text-->
+<html lang="en">
+    <!--Head gives additional information that won't be displayed on screen-->
+    <head>
+        <title>Page's name</title>
+        <style>
+        body.rotated {
+            transform-origin: center;
+            transition: transform 2s ease;
+            transform: rotate(180deg);
+        }
+
+        body.disappearing * {
+            transition: opacity 5s ease;
+            opacity: 0;
+        }
+    </style>
+    </head>
+
+    <!--Body is what is visible in the screen-->
+    <!--The page´s background can be changed here-->
+    <body style="background-color:#85D8C9">
+        <!--Heading-->
+        <h1>First heading</h1>
+        <!--Paragraph-->
+        <p>First paragraph</p>
+        <!--Insert image with alt text and sizing attributes-->
+        <img src="lion.jpeg" alt="Image of a lion" width="500" height="250">
+        <!--Jump a line-->
+        <br>
+        <!--Add a link to a page-->
+        <a href="https://www.nationalgeographic.com">Click here to visit national geographic's website!</a>
+        <br>
+        <!--Create a horizontal line-->
+        <hr>
+        <!--Align text left, right, or center-->
+        <h2 style="text-align:center">Second (centered) heading</h2>
+        <!--Change the colour, font, and size attributes-->
+        <p style="color:purple;font-size:20px;font-family:coutier">Here's a nice text in purple courier font, size 20</p>
+        <!--Here's what preformatted text looks like-->
+        <pre>
+This is 
+    Preformatted
+        Text in
+            Courier font
+        </pre>
+        <!--Here's how to add tooltips-->
+        <p title="This is a tootip!">If you let your cursor over this text, you will see a tooltip come up!</p>
+        <p>Click the photo below to get redirected to UCL's website!</p>
+        <!--Here's how to add a link to an image-->
+        <a title ="Click me!!" href="https://www.ucl.ac.uk"><img src="UCL.jpeg" alt="This is UCL's campus!" width="500" height="250"></a>
+        <!--Here's how to format elements!-->
+        <p>
+            <bold>bold</bold>
+            <strong>strong</strong>
+            <i>italic</i>
+            <del>deleted</del>
+            <sub>sub</sub><em>emphasided</em><sup>sup</sup>
+
+        </p>
+
+        <button id="rotateDisappearButton">Rotate and Disappear</button>
+
+        <script>
+            const button = document.getElementById('rotateDisappearButton');
+            const body = document.body;
+            let isRotated = false;
+            let isDisappearing = false;
+
+            button.addEventListener('click', async () => {
+                if (!isRotated) {
+                    isRotated = true;
+                    body.classList.add('rotated');
+
+                    // Wait for 2 seconds after rotation
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+
+                    if (!isDisappearing) {
+                        isDisappearing = true;
+                        body.classList.add('disappearing');
+                    }
+                }
+            });
+        </script>
+
+    </body>
+
+</html>
