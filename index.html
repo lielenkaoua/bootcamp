@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <!--Initiate html framework and indicate language of text-->
-<html lang="en">
+<html lang="en-US">
     <!--Head gives additional information that won't be displayed on screen-->
     <head>
+        <!-- name of the page, name that appears when added to favourites -->>
         <title>Page's name</title>
+
+        <!-- link element is used to link to external style sheets -->
+        <link rel="stylesheet" href="styles.css">
+
+        <!-- meta element is used to specify which character set is used, page description, keywords, author, and other metadata (i.e data about data)
+        <metadata is used by browsers (how to display content), search engines (keywords), and more> 
+        -->
+        <meta charset="UTF-8">
+        <!-- provide a description for web page -->
+        <meta name="description" content="JavaScript">
+        <!-- keywords and author for the search engines -->
+        <meta name="keywords" content="Javascript, UCL, Lion">
+        <meta name="author" content="myself">
+        <!-- refresh document every 30 seconds
+        <meta http-equiv="refresh" content="30">
+        -->
+        <!-- setting viewport, i.e. the user's visible area of a web page which varies with the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     </head>
+
+    <style>
+        h3 {
+            color: blueviolet;
+            font-family: Verdana;
+            font-size:3 00%;
+        }
+
+        div.first_class {
+            color: tomato;
+            font-family: sans-serif;
+        }
+
+        span.second_class {
+            font-size: 120%;
+            color:bisque
+        }
+
+    </style>
 
     <!--Body is what is visible in the screen-->
     <!--The page´s background can be changed here-->
@@ -36,18 +76,163 @@ This is
         <!--Here's how to add tooltips-->
         <p title="This is a tootip!">If you let your cursor over this text, you will see a tooltip come up!</p>
         <p>Click the photo below to get redirected to UCL's website!</p>
-        <!--Here's how to add a link to an image-->
-        <a title ="Click me!!" href="https://www.ucl.ac.uk"><img src="UCL.jpeg" alt="This is UCL's campus!" width="500" height="250"></a>
-        <!--Here's how to format elements!-->
+        <!-- here's how to add a link to an image -->
+        <a title ="Click me!!" href="https://www.ucl.ac.uk"><img src="UCL.jpeg" alt="This is UCL's campus!" style="width:500px;height:250px;"></a>
+        <!-- here's how to format elements! -->
         <p>
             <bold>bold</bold>
             <strong>strong</strong>
             <i>italic</i>
             <del>deleted</del>
             <sub>sub</sub><em>emphasided</em><sup>sup</sup>
+            <ins>insterted</ins>
 
         </p>
         <button type="button">This is a useless button!</button>
+
+        <!-- another way to add quotation makrs -->
+        <p><q>Another way to add quotation marks using the 'q' HTML tags</q></p>
+
+        <!-- blockquotes to define section that is quoted from another source -->
+        <p>The following is a blockquote, it's used to quote from external sources:</p>
+        <blockquote cite="https://www.ucl.ac.uk">Disruptive thinking since 1826</blockquote>
+
+        <!-- abbreviations can give useful information to browsers -->
+        <p><abbr title="University College London">UCL</abbr> is a great university</p>
+
+        <!-- address element to define contact information of a document -->
+        <address style="font-family:courier">
+            University College London <br>
+            Visit us at: www.ucl.ac.uk<br>
+            6th Floor, Bidborough House, 38-50 Bidborough Street, London, WC1H 9BT
+        </address>
+
+        <!-- cite for work title -->
+        <p><cite>American Psycho</cite> by Bret Easton Ellis. Published in 1991</p>
+
+        <!-- bi-directional override -->
+        <bdo dir="rtl">This text will be written from right to left</bdo>
+
+        <!-- block comments are put like this
+        <img border="0" src="psycho.jpg" alt="American Psycho">
+         -->
+
+        <!-- There are three types of CSS: inline, internal, and external -->
+
+        <!-- inline CSS uses the style attribute of an HTML element -->
+        <h1 style="color:orange">This is text has been coloured using the inline CSS method</h1>
+
+        <!-- see head section for internal CSS type -->
+        <h3>This text has been coloured using the internal CSS method</h3>
+
+        <!-- see styles.css file and head for external CSS type -->
+        <h4>This text has been coloured using the external CSS method</h4>
+
+        <!-- local link, different than absolute links as used above. Their default colours can be changed using CSS as seen in the styles.css file -->
+        <a href="rotate and disappear.html">This is a local link to my other page!</a>
+
+        <!-- this link will open in a new window-->
+        <a href="http://www.ucl.ac.uk" target="_blank">This link will open in a new window</a>
+
+        <!-- this is how tables are created -->
+        <table style="width:100%;text-align:left">
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <th>Jill</th>
+                <th>Smith</th>
+                <th>50</th>
+            </tr>
+            <tr>
+                <th>Eve</th>
+                <th>Jackson</th>
+                <th>94</th>
+            </tr>
+        </table>
+
+        <!-- this is how unordered lists are made -->
+        <ul style="list-style-type:circle">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>   
+        
+        <!-- this is how ordered lists are made -->
+        <ol type="i">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ol>
+
+        <!-- description lists with definition tag 'dt' and description tag 'dd' -->
+        <dl>
+            <dt>Coffee</dt>
+            <dd>- black hot drink</dd>
+            <dt>Milk</dt>
+            <dd>- white cold drink</dd>
+        </dl>
+
+        <!-- nested lists -->
+
+        <ul style="list-style-type: disk;">
+            <li>Coffee</li>
+            <li>Tea
+                <ul style="list-style: circle;">
+                    <li>Black tea</li>
+                    <li>Green tea</li>
+                </ul>
+            </li>
+            <li>Milk</li>
+        </ul>
+
+        <!-- block-level elements: always starts on a new line and takes up the full width available. ex: div, h1, p, form
+        <inline elements: does not start on a new line and only takes up as much width as necessary. ex: span, a, img>
+        -->
+
+        <!-- div elemenet used as a container for other elements -->
+        <div style="background-color: blueviolet; color: black; padding:10px">
+            <h2>This is text contained in the div container element</h2>
+            <p>It allows to use specified attributes for a specific set of elements</p>
+        </div>
+
+        <!-- the class attribute makes it possible to define equal styles for elements with the same class name, see head for the div.first_class class -->
+        <div class="first_class">
+            <p>This text has been modified using the class attribute on the div element!</p>
+        </div>
+
+        <!-- the class attribute can also be used for inline elements, see head for the span.second_class class -->
+        <p>This <span class="second_class">span</span> was modified using the class attribute</p>
+
+        <!-- html iframe is used to display a web page within a web page
+        <iframe width="500px" height="500px" src="https://www.ucl.ac.uk"></iframe>
+        -->
+
+        <!-- javascript makes html more dynamic, we use the document.getElementById(id) method to select the html element -->
+
+        <button type="button"
+        onclick="document.getElementById('demo1').innerHTML = Date()">
+        Click me to display the date and time (done using JavaScript)</button>
+        <p id="demo1"></p>
+
+        <!-- noscript tag can be used to provide alternate content to users that have disabled scripts -->
+        <script>
+            document.getElementById("demo").innerHTML = "Hello JavaScript!";
+        </script>
+        <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+        <!--
+        <header> - Defines a header for a document or a section
+            - <nav> - Defines a container for navigation links
+            - <section> - Defines a section in a document
+            - <article> - Defines an independent self-contained article
+            - <aside> - Defines content aside from the content (like a sidebar)
+            - <footer> - Defines a footer for a document or a section
+            - <details> - Defines additional details
+            - <summary>  - Defines a heading for the <details> element 
+        -->
 
     </body>
 
