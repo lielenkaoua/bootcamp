@@ -2,6 +2,10 @@
     margin: 0;
  }
 
+ a:link {
+    color: black;
+ }
+
  .topbar {
     display: flex;
     justify-content: space-between;
