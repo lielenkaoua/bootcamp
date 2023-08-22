@@ -1,27 +1,72 @@
-h4 {
-    color: white;
-    font-family: helvetica;
-    font-size: 100%
+ body {
+    margin: 0;
+ }
+
+ .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-a:link {
-    color: white;
-    background-color: transparent;
-    text-decoration: none
-
+img {
+    width: 100%;
 }
 
-a:hover {
-    color: black;
-    background-color: transparent;
-    text-decoration: underline;
+header {
+    margin-bottom: 5em;
 }
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+header nav ul {
+    display: flex;
+    list-style-type: none;
 }
 
-th, td {
-    padding: 5px;
+header ul li {
+    margin-right: 1em
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    margin: 0 15%;
+}
+
+.grid4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 15%;
+    gap: 1em;
+}
+
+.grid4 img {
+    width: 20%
+}
+
+.n26 {
+    background-color: rgb(192, 209, 226);
+}
+
+.enhance {
+    width:170%;
+    position: relative;
+    left: -27%;
+} 
+
+.red {
+    background-color: rgb(187, 7, 4);
+    text-align: center;
+    padding: 2em 0 0 0;
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 15%;
+    gap: 1em;
+}
+
+.grid3 div:first-child {
+    grid-column: 1/-1;
+    text-align: center;
 }

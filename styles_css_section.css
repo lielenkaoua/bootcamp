@@ -1,0 +1,228 @@
+/* 
+selector {
+    property: value;
+    property1: value;
+} 
+*/
+
+/* element selector */
+h1.section {
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+/* class selector */
+p.box{
+    font-family: courier;
+}
+
+/* class selector without specifying element (more versatile option) */
+.sphere {
+    font-family: courier;
+}
+
+/* id selector but only valid once per document so try to avoid */
+#tube {
+    font-family: verdana;
+}
+
+/* applying same styles to several selectors */
+/*
+h1,
+h2,
+h3 {
+    color: grey;
+}
+*/
+
+/* descendant selectors - specify the parent selector and then the element to style */
+.first_list ul li{
+    list-style-type: circle;
+}
+
+/* apply several descendant selectors all at one */
+section :is(h1, h2, h3, h4, h5, h6, p) {
+    color: red;
+}
+
+/* child selector to select only direct child of parent */
+.items > p {
+    color: brown;
+}
+
+/* adjacent sibling of an element enabling selection of an element when it's next a specific one */
+h3 + p {
+    font-family: 'Courier New';
+}
+
+/* general sibling of an element enabling selection of all siblings after specified element eben if they are not adjacent to each other but can only select paragraph elements */
+/* 
+h4 ~ p {
+    font-family: Impact;
+} 
+*/
+
+/* attribute selectors gives the ability to target an element based on the attributes it has */
+input[type="text"] {
+    border-color: violet;
+}
+
+/* attribute selector for elements that have an attribute */
+/* 
+input[values] {
+
+} 
+*/ 
+
+/* 
+select a value that starts with a string
+a[href^="http"]
+
+select a value that ends with a string
+a[href$=".com"]
+
+select a string thta contains a string
+a[href*=".com"] 
+*/
+
+/* 
+make the matches case insensitive by adding 'i'
+a[href*="http" i] 
+*/
+
+/* 
+Select a value followed by a "-", very useful for selecting language subcodes
+span[lang|="en"] 
+*/
+
+/* pseudo-class selectors work by acting as if they added a class depending on the state of the element, for example a link */
+a:link.link_class {
+    color: aqua;
+}
+
+a:hover.link_class {
+    color: brown;
+}
+
+a:active.link_class {
+    color: blue;
+}
+
+a:focus {
+    color: orange;
+}
+
+/* 
+To only apply CSS to the first paragraph inside wrapper we use the first child-selector
+.wrapper p:first-child {
+
+} 
+*/
+
+/* For more versatiliy, p:last child, tr:nth-child(even), tr:nth-child(2n + 1), or tr:nth-child(2) can be used */
+
+/* 
+To apply CSS to every other paragraph but ignore the headings we could use the following selector.
+p:nth-of-type(odd) {
+
+} 
+*/
+
+/*
+The only-child pseudo-class will match if the element is the only child of the parent
+li:only-child {
+
+} 
+*/
+
+/* 
+The empty pseudo-class will match if an element is completely empy or just contains an HTML comment
+p:empy{
+
+} 
+*/
+
+/* 
+The not pseudo class allows to do something if a selector does not match
+td:not(.animal) {
+    font-wieght: bold;
+}
+*/
+
+/* The :is pseudo class function takes a selector list as its argument, and selects any element that can be selected by one of the selectors in that list */
+:is(header, footer, article) p:hover {
+    color: red;
+    cursor: pointer;
+}
+
+/* The ::first-letter selector targets the first letter without the need of a span */
+.intro::first-letter {
+    font-size:200%
+}
+
+/* The first-line pseudo element selects the first formatted line of text */
+.outro::first-line {
+    font-weight: bold;
+}
+
+/* The ::before and ::after pseudo-elements give us the ability to insert generated content before and after anotehr element */
+.story::before {
+    content: "Once upon a time,";
+    display: block;
+    font-style: italic;
+}
+.story::after {
+    content: " The End.";
+    display: block;
+}
+
+/* set the width of screen to certain pixel length */
+.wrapper {
+    width: 50%;
+    max-width: 500px;
+  }
+
+.box1 {
+    width: 300px;
+    font-size: 20px;
+    padding: 1em;
+    border: 4px solid #ccc;
+    margin-bottom: 20px;
+}
+
+p:hover {
+    z-index: 1;
+}
+
+.first_box {
+    width: 150px;
+    background-color: green;
+    color: beige;
+    padding: 1em;
+    border: 2px solid black;
+    position: absolute;
+    top: 10px;
+}
+
+.second_box {
+    width: 150px;
+    background-color: purple;
+    color: beige;
+    padding: 1em;
+    border: 2px solid black;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+.third_box {
+    width: 150px;
+    background-color: beige;
+    padding: 1em;
+    border: 2px solid black;
+    position: absolute;
+    top: 60px;
+    left: 40px;
+}
+
